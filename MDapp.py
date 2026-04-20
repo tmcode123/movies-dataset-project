@@ -28,8 +28,13 @@ df = load_data()
 genres = st.multiselect(
     "Genres",
     df.genre.unique(),
-    ["Action", "Adventure", "Biography", "Comedy", "Drama", "Horror"],
+    [],
 )
+
+# Don't render anything until the user picks at least one genre.
+if not genres:
+    st.info("Select a genre above to get started.")
+    st.stop()
 
 # Show a slider widget with the years using `st.slider`.
 min_year = int(df["year"].min())
