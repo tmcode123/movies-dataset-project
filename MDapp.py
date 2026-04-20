@@ -32,7 +32,9 @@ genres = st.multiselect(
 )
 
 # Show a slider widget with the years using `st.slider`.
-years = st.slider("Years", 1986, 2006, (2000, 2016))
+min_year = int(df["year"].min())
+max_year = int(df["year"].max())
+years = st.slider("Years", min_year, max_year, (min_year, max_year))
 
 # Filter the dataframe based on the widget input and reshape it.
 df_filtered = df[(df["genre"].isin(genres)) & (df["year"].between(years[0], years[1]))]
