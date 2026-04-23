@@ -11,8 +11,6 @@ Exploratory analysis and predictive modelling of 3,800+ films (1980–2016) to u
 ## How to run
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn streamlit altair
-
 python 01_data_cleaning.py       # clean raw data
 python 02_modelling.py           # train & evaluate models
 jupyter notebook movies_analysis.ipynb  # full narrative analysis
